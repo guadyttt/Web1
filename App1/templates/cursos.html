@@ -1,0 +1,43 @@
+{% extends "padre.html "%}
+{% load static %}
+
+{% block contenido %}
+    <header class="masthead" >
+        <div class= "container" style="color:black; opacity: 100">
+            <h1 class="text-center">Base de datos</h1>
+            <p></p>
+            <p></p>
+            <h5 class="text-center">Cursos</h5>
+        </div>
+    </header>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <p>Cursos</p>
+            </div>
+            <div class="table-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>comision</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for n in cursos %}
+                        <tr>
+                            <th>{{n.id}}</th>
+                            <th>{{n.nombre}}</th>
+                            <th>{{n.comision}}</th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a class="btn btn-primary" href="curso_alta">Nuevo Curso</a>
+        <a class="btn btn-outline-primary" href="curso_buscar">Buscador</a>
+
+    </div>
+{% endblock %}
