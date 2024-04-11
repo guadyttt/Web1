@@ -44,6 +44,11 @@ def curso_resultado(request):
     else:
         return render(request,"curso_buscar_error.html")
 
+def curso_eliminar(request, id):
+    curso = Curso.objects.get(id=id)
+    curso.delete()
+    cursos = Curso.objects.all()
+    return render (request, "curso_eliminado.html", {"cursos":cursos})
 
 #PROFESORES
 

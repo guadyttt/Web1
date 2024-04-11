@@ -15,8 +15,9 @@
             <div class="card-header">
                 <p>Cursos</p>
             </div>
-            <div class="table-body">
-                <table class="table">
+            <div class="card">
+            <table class="table">
+                <div class="card-head">
                     <thead>
                         <tr>
                             <th>id</th>
@@ -24,16 +25,21 @@
                             <th>comision</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {% for n in cursos %}
-                        <tr>
-                            <th>{{n.id}}</th>
-                            <th>{{n.nombre}}</th>
-                            <th>{{n.comision}}</th>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                    <div class="card-body">
+                        <tbody>
+                            {% for n in cursos %}
+                            <tr>
+                                <td>{{n.id}}</td>
+                                <td>{{n.nombre}}</td>
+                                <td>{{n.comision}}</td>
+                                <td><a class="btn btn-danger btn-sm"href="{% url 'curso_eliminar' n.id %}">X</a></td>
+                                <td><a class="btn btn-danger btn-sm"href="{% url 'curso_eliminar' n.id %}">Editar</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </div>
+                </div>
+            </table>
             </div>
         </div>
         <a class="btn btn-primary" href="curso_alta">Nuevo Curso</a>

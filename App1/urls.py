@@ -7,10 +7,11 @@ urlpatterns = [
 
     #CURSOS
     path("curso_alta", views.curso_formulario),
-    path("cursos", views.cursos_ver,),
+    path("cursos", views.cursos_ver,name="cursos"),
     path("curso_buscar",views.curso_buscar),
     path("curso_resultado",views.curso_resultado),
-
+    path("curso_eliminar/<int:id>", views.curso_eliminar, name="curso_eliminar"),
+    
     #PROFESORES
     path("profesores",views.profesores_ver),
     path("profesor_alta",views.profesor_formulario),
