@@ -46,6 +46,7 @@ def curso_resultado(request):
 
 
 #PROFESORES
+
 def profesor_formulario(request):
     if request.method =="POST":
         mi_formulario = Profesor_formulario(request.POST)
@@ -80,7 +81,6 @@ def profesor_resultado(request):
 
 #ALUMNOS
 
-
 def alumno_formulario(request):
     if request.method == "POST":
         mi_formulario = Alumno_formulario(request.POST)
@@ -112,4 +112,3 @@ def alumno_resultado(request):
     else:
         return render(request,"alumno_buscar_error.html")
 
-        
