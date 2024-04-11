@@ -22,6 +22,7 @@ def curso_formulario(request):
             return render(request,"curso_formulario.html")
     return render(request,"curso_formulario.html")
 
+
 def cursos_ver(request):
     cursos = Curso.objects.all()
     dicc = {"cursos": cursos}
@@ -29,8 +30,10 @@ def cursos_ver(request):
     documento = plantilla.render(dicc)
     return HttpResponse(documento)
 
+
 def curso_buscar(request):
     return render(request, "curso_buscar.html")
+
 
 def curso_resultado(request):
 
@@ -40,6 +43,7 @@ def curso_resultado(request):
         return render(request,"curso_resultado.html",{"cursos":cursos})
     else:
         return render(request,"curso_buscar_error.html")
+
 
 #PROFESORES
 def profesor_formulario(request):
@@ -52,6 +56,7 @@ def profesor_formulario(request):
             return render(request, "profesor_formulario.html")
     return render(request, "profesor_formulario.html")
 
+
 def profesores_ver(request):
     profesores = Profesor.objects.all()
     dicc = {"profesores":profesores}
@@ -59,8 +64,10 @@ def profesores_ver(request):
     documento = plantilla.render(dicc)
     return HttpResponse(documento)
 
+
 def profesor_buscar(request):
     return render(request,"profesor_buscar.html")
+
 
 def profesor_resultado(request):
     if request.GET["nombre"]:
@@ -70,7 +77,9 @@ def profesor_resultado(request):
     else:
         return render(request,"profesor_buscar_error.html")
 
+
 #ALUMNOS
+
 
 def alumno_formulario(request):
     if request.method == "POST":
@@ -82,6 +91,7 @@ def alumno_formulario(request):
             return render(request , "alumno_formulario.html")
     return render(request , "alumno_formulario.html")
 
+
 def alumnos_ver(request):
     alumnos = Alumno.objects.all()
     dicc = {"alumnos":alumnos}
@@ -89,8 +99,10 @@ def alumnos_ver(request):
     documento = plantilla.render(dicc)
     return HttpResponse(documento)
 
+
 def alumno_buscar(request):
     return render(request, "alumno_buscar.html")
+
 
 def alumno_resultado(request):
     if request.GET["nombre"]:    
@@ -100,3 +112,4 @@ def alumno_resultado(request):
     else:
         return render(request,"alumno_buscar_error.html")
 
+        
