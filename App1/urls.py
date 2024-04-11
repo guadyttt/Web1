@@ -7,7 +7,7 @@ urlpatterns = [
 
     #CURSOS
     path("curso_alta", views.curso_formulario),
-    path("cursos", views.cursos_ver, name="cursos.html"),
+    path("cursos", views.cursos_ver,),
     path("curso_buscar",views.curso_buscar),
     path("curso_resultado",views.curso_resultado),
 
