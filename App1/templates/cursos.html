@@ -33,7 +33,7 @@
                                 <td>{{n.nombre}}</td>
                                 <td>{{n.comision}}</td>
                                 <td><a class="btn btn-danger btn-sm"href="{% url 'curso_eliminar' n.id %}">X</a></td>
-                                <td><a class="btn btn-danger btn-sm"href="{% url 'curso_eliminar' n.id %}">Editar</a></td>
+                                <td><a class="btn btn-danger btn-sm"href="{% url 'curso_editar' n.id %}">Editar</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>

@@ -26,6 +26,8 @@
                         <th>{{n.id}}</th>
                         <th>{{n.nombre}}</th>
                         <th>{{n.dni}}</th>
+                        <td><a class="btn btn-danger btn-sm"href="{% url 'alumno_eliminar' n.id %}">X</a></td>
+                        <td><a class="btn btn-danger btn-sm"href="{% url 'alumno_editar' n.id %}">Editar</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>

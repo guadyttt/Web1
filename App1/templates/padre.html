@@ -20,11 +20,26 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <li><a class="navbar-brand" href="inicio">Inicio</a></li>
-                <li><a class="navbar-brand" href="cursos">Cursos</a></li>
-                <li><a class="navbar-brand" href="profesores">Profesores</a></li>
-                <li><a class="navbar-brand" href="alumnos">Alumnos</a></li>
-            </div>  
+                <div class="d-grid gap-2 d-md-block">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
+                                Menu
+                            </button>
+                            <ul class="dropdown-menu" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 40px);">
+                                <li><a class="dropdown-item" href="/App1/inicio">Inicio</a></li>
+                                <li><a class="dropdown-item" href="/App1/cursos">Cursos</a></li>
+                                <li><a class="dropdown-item" href="/App1/profesores">Profesores</a></li>
+                                <li><a class="dropdown-item" href="/App1/alumnos">Alumnos</a></li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div class="btn-group">
+                    <a type="btn" class="btn btn-primary me-md-2">Ingresar</a>
+                    <a type="btn" class="btn btn-primary">Registrarse</a>
+                </div>
+                </div>
+            </div>
         </nav>
 
 <!--Inicio mi contenido -->
