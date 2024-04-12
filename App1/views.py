@@ -10,6 +10,24 @@ from App1.forms import Curso_fomulario, Profesor_formulario, Alumno_formulario
 def inicio(request):
     return render(request, "inicio.html")
 
+def login_request(request):
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            usuario = form.cleaned_data.get("username")
+            contra = form.cleaned_data.get("password")
+            user = authenticate(username=usuario , password=contra)
+            if user is not None:
+                login(request , user )
+                return render( request , "inicio.html" , {"mensaje":f"Bienvenido/a {usuario}"})
+            else:
+                return HttpResponse(f"Usuario no encontrado")
+        else:
+            return HttpResponse(f"FORM INCORRECTO {form}")
+    form = AuthenticationForm()
+    return render( request , "login.html" ,{"form":form})
+
+
 #CURSOS
 
 def curso_formulario(request):
